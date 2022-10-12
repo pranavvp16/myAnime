@@ -33,7 +33,7 @@ Clone the project
   git clone https://github.com/pranavvp16/AnimeOnly.git
 ```
 
-Go to the project directory
+Go to the project directory --> open "anime_posters" --> download the posters using download_posters.py
 
 
 Install dependencies
