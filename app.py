@@ -8,7 +8,7 @@ import os
 def recommend(animes):
   anime_index = anime[anime['title'] == animes].index[0]
   distances = similarity[anime_index]
-  anime_list = sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])[1:6]
+  anime_list = sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])[1:11]
 
   recommended_list = []
   poster_image=[]
