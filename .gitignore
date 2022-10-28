@@ -6,3 +6,4 @@ anime_posters
 .LSOverride
 Icon
 .idea
+__pycache__
