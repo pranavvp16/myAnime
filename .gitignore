@@ -7,3 +7,4 @@ anime_posters
 Icon
 .idea
 __pycache__
+*.pyc
