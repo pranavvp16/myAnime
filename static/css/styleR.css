@@ -53,11 +53,16 @@
 }
 .dropdown {
     color:#F2D388;
-    margin-left:100px
+    margin-left:100px;
 }
 .dropdown_menu{
     width: 70%;
     margin-top: 20px;
     padding: 10px;
-    
+    border-radius: 10px;
+    background: hsl(30, 1%, 32%);
+    border: 2px solid white;
+}
+*:focus{
+    outline: none;
 }
