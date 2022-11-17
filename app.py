@@ -16,4 +16,4 @@ def anime_name():
 
 @app.route('/recommend')
 def recommendation():
-    return " ON recommendation page"
+    return render_template('recommend.html' ,)
