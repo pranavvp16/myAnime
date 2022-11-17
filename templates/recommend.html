@@ -16,13 +16,13 @@
                 </ul>
             </div>
         <h1 class="sub-heading">Recommendations</h1>
-        <div>
+        <div class="dropdown">
             <p>Choose your favourite Anime to get recommedation</p>
             <form action="/recommend" method="get">
-                <input type="text">
-                <datalist>
-                    {%for i in anime_titles%}
-                    <option value={{i}}>{{i}}</option>
+                <input list="titles" class ="dropdown_menu" id="title">
+                <datalist id="titles">   
+                    {% for title in titles %}         
+                    <option value = "{{title}}">
                     {% endfor %}
                 </datalist>
 

@@ -8,6 +8,7 @@ app.run(debug=True)
 anime_dict = pkl.load(open('pickle_data/anime_dict.pkl','rb'))
 similarity = pkl.load(open('pickle_data/similarity.pkl','rb'))
 anime_df = pd.DataFrame.from_dict(anime_dict)
+titles = anime_df["title"].values
 
 
 @app.route('/')
@@ -16,4 +17,4 @@ def anime_name():
 
 @app.route('/recommend')
 def recommendation():
-    return render_template('recommend.html' ,)
+    return render_template('recommend.html' ,titles = titles)

@@ -51,3 +51,13 @@
     color: white ; 
     margin: 30px 100px;
 }
+.dropdown {
+    color:#F2D388;
+    margin-left:100px
+}
+.dropdown_menu{
+    width: 70%;
+    margin-top: 20px;
+    padding: 10px;
+    
+}
