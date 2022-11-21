@@ -10,7 +10,7 @@ anime = pd.DataFrame.from_dict(anime_dict)
 titles = anime["title"].values
 
 
-def recommend(animes):
+def recommender(animes):
   anime_index = anime[anime['title'] == animes].index[0]
   distances = similarity[anime_index]
   anime_list = sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])[1:6]
@@ -36,8 +36,9 @@ def recommend():
 @app.route('/recommendation', methods=["POST","GET"])
 def recommendation():
     if request.method =="POST":
-        title = request.form["title"]
-        return recommend(title)
+        anime_title = request.form["title"]
+        name,image=recommender(anime_title)
+        return render_template('recommendations.html' , name=name ,image=image)
 
     else:
         return "Something went wrong"
