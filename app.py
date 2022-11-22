@@ -2,6 +2,8 @@ from cgitb import html
 from flask import Flask , render_template ,request
 import pickle as pkl 
 import pandas as pd
+import random
+
 app = Flask(__name__)
 
 anime_dict = pkl.load(open('pickle_data/anime_dict.pkl','rb'))
@@ -13,15 +15,16 @@ titles = anime["title"].values
 def recommender(animes):
   anime_index = anime[anime['title'] == animes].index[0]
   distances = similarity[anime_index]
-  anime_list = sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])[1:6]
+  anime_list = sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])[1:11]
+  anime_list5 =random.sample(anime_list,k=5)
 
   recommended_list = []
   poster_image=[]
 
-  for i in anime_list:
+  for i in anime_list5:
     recommended_list.append(anime.iloc[i[0]].title)
     poster_image.append("static/images/anime_posters/"+str(i[0]) + '.jpg')
-  return recommended_list , poster_image
+  return recommended_list, poster_image
 
 
 @app.route('/')
