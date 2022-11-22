@@ -20,7 +20,7 @@ def recommender(animes):
 
   for i in anime_list:
     recommended_list.append(anime.iloc[i[0]].title)
-    poster_image.append("anime_posters/"+str(i[0]) + '.jpg')
+    poster_image.append("static/images/anime_posters/"+str(i[0]) + '.jpg')
   return recommended_list , poster_image
 
 
@@ -38,7 +38,7 @@ def recommendation():
     if request.method =="POST":
         anime_title = request.form["title"]
         name,image=recommender(anime_title)
-        return render_template('recommendations.html' , name=name ,image=image)
+        return render_template('recommendations.html' , names=name ,images=image)
 
     else:
         return "Something went wrong"
