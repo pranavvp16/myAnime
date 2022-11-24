@@ -1,10 +1,10 @@
-from cgitb import html
 from flask import Flask , render_template ,request
 import pickle as pkl 
 import pandas as pd
 import random
 
 app = Flask(__name__)
+app.run(debug=True)
 
 anime_dict = pkl.load(open('pickle_data/anime_dict.pkl','rb'))
 similarity = pkl.load(open('pickle_data/similarity.pkl','rb'))
@@ -41,7 +41,7 @@ def recommendation():
     if request.method =="POST":
         anime_title = request.form["title"]
         name,image=recommender(anime_title)
-        return render_template('recommendations.html' , names=name ,images=image)
+        return render_template('recommendations.html' , names=name ,images=image , titles=titles)
 
     else:
         return "Something went wrong"

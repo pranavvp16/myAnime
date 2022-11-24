@@ -1,10 +1,12 @@
 <html>
-<head>
-<title>myAnime</title>
-<link rel="stylesheet" href="/static/css/style.css">
-</head>
+    <head>
+        <title>Recommendations</title>
+        <link rel="stylesheet" href="/static/css/styleR.css">
+    </head>
     <body>
-        <div class = "banner">
+       
+        
+        <div class="banner">
             <div class="navbar">
                 <h1 class="logo">myAnime</h1>
                 <ul>
@@ -13,14 +15,32 @@
                     <li><a href="/recommend">Explore</a></li>
                 </ul>
             </div>
-            <div class="content">
+        <h1 class="sub-heading">Recommendations</h1>
+        <div class="dropdown">
+            <p>Choose your favourite Anime to get recommedation</p>
+            <form action="recommendation" method="POST">
+                <input name="title" class ="dropdown_menu" list="titles">
+                <datalist id="titles">   
+                    {% for title in titles %}         
+                    <option value = "{{title}}">
+                    {% endfor %}
+                </datalist>
+            <button class="button" type="submit">Recommend</button>
+            </form>
+        </div>
+            <div>
+                <div class="grid-container">
                 {% for image in images%}
+
                 <img src="{{image}}" alt="anime_image">
+
                 {% endfor %}
                 {% for name in names %}
+
                 <p>{{name}}</p>
+
                 {% endfor %}
-            </div>
+                </div>  
             </div>
         </div>
     </body>
