@@ -103,7 +103,21 @@ button{
     border-radius:10px;
     border: 2px solid black;
     background: #F2D388;
+    color: black;
 }
-.grid-content{
-    display: grid;
+.grid-container{
+    display: flex;
+    gap: 20px;
+    width: 80%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+.grid_item{
+    flex: 1;
+}
+.grid_item p {
+    color: #F2D388;
+}
+.grid_item img{
+    width:100%;
 }

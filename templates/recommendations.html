@@ -15,16 +15,14 @@
         </div>
             <div>
                 <div class="grid-container">
-                {% for image in images%}
-
-                <img src="{{image}}" alt="anime_image">
-
-                {% endfor %}
-                {% for name in names %}
-
-                <p>{{name}}</p>
+                {% for i in range(5)%}
+                <div class="grid_item">
+                    <img class="images" src="{{images[i]}}" alt="anime_image">
+                    <p class="names_anime">{{names[i]}}</p>
+                </div>
 
                 {% endfor %}
+
                 </div>  
             </div>
 {% endblock content%}    
