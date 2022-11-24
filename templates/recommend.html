@@ -1,20 +1,5 @@
-<html>
-    <head>
-        <title>Recommendations</title>
-        <link rel="stylesheet" href="/static/css/styleR.css">
-    </head>
-    <body>
-       
-        
-        <div class="banner">
-            <div class="navbar">
-                <h1 class="logo">myAnime</h1>
-                <ul>
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="#">Animes</a></li>
-                    <li><a href="/recommend">Explore</a></li>
-                </ul>
-            </div>
+{% extends "layout.html"%}
+{% block content%}
         <h1 class="sub-heading">Recommendations</h1>
         <div class="dropdown">
             <p>Choose your favourite Anime to get recommedation</p>
@@ -28,6 +13,4 @@
             <button class="button" type="submit">Recommend</button>
             </form>
         </div>
-        </div>
-    </body>
-</html>
+{% endblock content %}
