@@ -56,5 +56,5 @@ For support, email pranavprajapati586@gmail.com.
 
 ## Screenshots
 
-![App Screenshot](images/app_image.png)
+![App Screenshot](app_screenshots/homepage.png)
 
