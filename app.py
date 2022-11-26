@@ -25,23 +25,26 @@ def recommender(animes):
     recommended_list.append(anime.iloc[i[0]].title)
     poster_image.append("static/images/anime_posters/"+str(i[0]) + '.jpg')
   return recommended_list, poster_image
-
+page_titles =["myAnime","recommend","recomendations"]
 
 @app.route('/')
 @app.route('/home')
 def anime_name():
-    return render_template('index.html')
+    return render_template('index.html',web_title=page_titles[0])
 
 @app.route('/recommend')
 def recommend():
-    return render_template('recommend.html' ,titles = titles)
+    return render_template('recommend.html' ,titles = titles , web_title=page_titles[1])
 
 @app.route('/recommendation', methods=["POST","GET"])
 def recommendation():
-    if request.method =="POST":
-        anime_title = request.form["title"]
-        name,image=recommender(anime_title)
-        return render_template('recommendations.html' , names=name ,images=image , titles=titles)
+    anime_title = ""
+    #if request.method =="POST":
+    anime_title = request.form.get("title")
+    if not anime_title:
+       return render_template('recommendation_empty.html',titles=titles,web_title=page_titles[1])
+    name,image=recommender(anime_title)
+    return render_template('recommendations.html' , names=name ,images=image , titles=titles , web_title=page_titles[2])
 
-    else:
-        return "Something went wrong"
+     #else:
+      #return "Something went wrong"
