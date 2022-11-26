@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1 class="sub-heading">Recommendations</h1>
+    <div class="dropdown">
+        <p>Choose your favourite Anime to get recommedation</p>
+        <form action="recommendation" method="POST">
+            <input name="title" class ="dropdown_menu" list="titles">
+            <datalist id="titles">   
+            {% for title in titles %}         
+            <option value = "{{title}}">
+            {% endfor %}
+            </datalist>
+            <button class="button" type="submit">Recommend</button>
+    </form>
+</div>
+    <h1>Enter a anime to get recommedation</h1>
+{% endblock content %}
