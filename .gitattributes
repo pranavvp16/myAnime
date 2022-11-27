@@ -1,2 +1,2 @@
-templates/* linguist-documentation=false
-templates/* linguist-vendored
+app/* linguist-documentation=false
+app/* linguist-vendored
