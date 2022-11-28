@@ -1,5 +1,6 @@
 env
-__pycaceh__ 
+__pycache__ 
+app.cpython-310.pyc
 anime_posters
 .DS_Store
 .AppleDouble

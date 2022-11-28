@@ -8,12 +8,18 @@ app.run(debug=True)
 
 anime_dict = pkl.load(open('pickle_data/anime_dict.pkl','rb'))
 similarity = pkl.load(open('pickle_data/similarity.pkl','rb'))
-anime = pd.DataFrame.from_dict(anime_dict)
-titles = anime["title"].values
+animes = pd.DataFrame.from_dict(anime_dict)
+titles = animes["title"].values
+
+def anime_info(anime):
+  anime_index=animes[animes['title'] == anime].index[0]
+  return anime_index
 
 
-def recommender(animes):
-  anime_index = anime[anime['title'] == animes].index[0]
+
+
+def recommender(anime):
+  anime_index = animes[animes['title'] == anime].index[0]
   distances = similarity[anime_index]
   anime_list = sorted(list(enumerate(distances)),reverse=True,key=lambda x:x[1])[1:11]
   anime_list5 =random.sample(anime_list,k=5)
@@ -22,9 +28,11 @@ def recommender(animes):
   poster_image=[]
 
   for i in anime_list5:
-    recommended_list.append(anime.iloc[i[0]].title)
+    recommended_list.append(animes.iloc[i[0]].title)
     poster_image.append("static/images/anime_posters/"+str(i[0]) + '.jpg')
   return recommended_list, poster_image
+
+
 page_titles =["myAnime","recommend","recomendations"]
 
 @app.route('/')
