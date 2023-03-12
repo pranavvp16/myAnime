@@ -30,7 +30,7 @@ This Project is Deployed on Heroku [Link]( https://anime-recommendation-mlh.hero
 Clone the project
 
 ```bash
-  git clone https://github.com/pranavvp16/AnimeOnly.git
+   git clone https://github.com/pranavvp16/myAnime.git
 ```
 
 Go to the project directory --> open "anime_posters" --> download the posters using download_posters.py
