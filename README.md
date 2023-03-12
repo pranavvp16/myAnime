@@ -39,13 +39,13 @@ Go to the project directory --> open "anime_posters" --> download the posters us
 Install dependencies
 
 ```bash
-  pip install streamlit
+  pip install flask
 ```
 
 Start the server
 
 ```bash
-  streamlit run app.py
+  flask run 
 ```
 
 
